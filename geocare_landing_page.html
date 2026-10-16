@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoCare - Sistem Informasi & Pelestarian Lingkungan (Unmul 2026)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0b1311',
+                            800: '#111d1a',
+                            700: '#1a2e28',
+                            600: '#25433b',
+                        },
+                        nature: {
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-slate-100 font-sans antialiased selection:bg-nature-500 selection:text-slate-900">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/85 backdrop-blur-md border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-nature-700 to-nature-500 flex items-center justify-center text-slate-900 shadow-lg shadow-nature-500/20 font-bold text-xl">
+                    <i class="fa-solid fa-seedling text-white"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-nature-400 to-emerald-200 bg-clip-text text-transparent">GeoCare</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-300">
+                <a href="#fitur" class="hover:text-nature-400 transition-colors">Fitur Sistem</a>
+                <a href="#kalkulator" class="hover:text-nature-400 transition-colors">Kalkulator Sampah</a>
+                <a href="#tentang" class="hover:text-nature-400 transition-colors">Tentang Kami</a>
+                <a href="#kontak-developer" class="hover:text-nature-400 transition-colors">Kontak Developer</a>
+                <a href="#download" class="bg-gradient-to-r from-nature-600 to-nature-500 hover:from-nature-500 hover:to-nature-400 text-slate-950 font-bold px-5 py-2.5 rounded-full shadow-lg shadow-nature-600/20 transition-all transform hover:-translate-y-0.5">Download APK</a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-slate-300 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-3 pb-5 space-y-3">
+            <a href="#fitur" class="block py-2 text-slate-300 font-medium">Fitur Sistem</a>
+            <a href="#kalkulator" class="block py-2 text-slate-300 font-medium">Kalkulator Sampah</a>
+            <a href="#tentang" class="block py-2 text-slate-300 font-medium">Tentang Kami</a>
+            <a href="#kontak-developer" class="block py-2 text-slate-300 font-medium">Kontak Developer</a>
+            <a href="#download" class="block text-center bg-nature-500 text-slate-950 py-3 rounded-xl font-bold shadow-md">Download APK</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden bg-gradient-to-b from-dark-800 via-dark-900 to-dark-900">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-nature-600/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-dark-700 border border-dark-600 px-4 py-2 rounded-full text-nature-400 font-semibold text-xs sm:text-sm">
+                        <i class="fa-solid fa-earth-asia"></i> Inovasi Geografi Mengabdi Unmul 2026
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Pantau & Lestarikan Lingkungan Bersama <span class="bg-gradient-to-r from-nature-400 to-emerald-300 bg-clip-text text-transparent">GeoCare</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0">
+                        Platform digital interaktif untuk mengenal, bersosialisasi, dan mengetahui perkembangan lingkungan sekitar serta pengelolaan bank sampah mandiri secara real-time.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#download" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-nature-500 hover:bg-nature-400 text-slate-950 px-8 py-4 rounded-2xl shadow-xl shadow-nature-500/20 font-bold transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-google-play text-2xl"></i>
+                            <div class="text-left">
+                                <div class="text-[10px] uppercase font-semibold text-slate-800">Download Aplikasi</div>
+                                <div class="text-sm -mt-0.5">GeoCare APK Android</div>
+                            </div>
+                        </a>
+                        <a href="#fitur" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-dark-700 border border-dark-600 hover:border-nature-500 text-slate-200 px-6 py-4 rounded-2xl font-semibold transition-all">
+                            <span>Jelajahi Fitur Sistem</span>
+                            <i class="fa-solid fa-arrow-down text-xs text-nature-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Phone Mockup Menampilkan Screenshot Aplikasi Asli -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="w-full max-w-xs bg-dark-800 rounded-[40px] p-3 shadow-2xl border-4 border-dark-700 relative">
+                        <!-- Kamera & Speaker Mockup -->
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-3.5 bg-dark-900 rounded-full z-20"></div>
+                        
+                        <!-- Layar Mockup Berisi Screenshot Aplikasi -->
+                        <div class="rounded-[28px] overflow-hidden h-[540px] border border-dark-600 bg-dark-900 shadow-inner relative">
+                            <img src="app-screenshot.png" alt="Tampilan Aplikasi GeoCare" class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="py-20 bg-dark-800 border-y border-dark-700 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-10">
+                <span class="text-nature-400 font-bold text-xs uppercase tracking-widest bg-dark-700 px-4 py-1.5 rounded-full border border-dark-600">Tentang Tim Pengabdian</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Geografi Mengabdi Unmul 2026</h2>
+            </div>
+            
+            <div class="bg-dark-900 border border-dark-600 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -bottom-10 -right-10 text-dark-700/40 text-9xl pointer-events-none">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed text-center sm:text-left italic relative z-10">
+                    "Kami Tim Pengabdian Geografi Mengabdi Angkatan Tahun 2026, dari Universitas Mulawarman - Pendidikan Geografi. Disini kami memperkenalkan inovasi terbaru kami yang memudahkan kita untuk mengenal, bersosialisasi, dan bersama-sama mengetahui perkembangan lingkungan sekitar, dalam upaya pelestarian lingkungan."
+                </p>
+                <div class="mt-8 pt-6 border-t border-dark-700 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-nature-600/20 text-nature-400 flex items-center justify-center font-bold border border-nature-600/30">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Universitas Mulawarman</div>
+                            <div class="text-xs text-slate-400">Program Studi Pendidikan Geografi</div>
+                        </div>
+                    </div>
+                    <span class="bg-dark-800 text-nature-400 text-xs font-semibold px-3.5 py-1.5 rounded-xl border border-dark-600">
+                        #GeografiMengabdi2026
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur Sistem Sesuai Aplikasi -->
+    <section id="fitur" class="py-20 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-nature-400 font-bold text-xs uppercase tracking-widest bg-dark-800 px-3.5 py-1.5 rounded-full border border-dark-700">Fitur Utama Sistem</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Navigasi & Modul Lengkap GeoCare</h2>
+                <p class="text-slate-400 text-sm">Dirancang khusus untuk memudahkan koordinasi warga, pemetaan spasial, dan pemantauan ekosistem.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-nature-600/20 text-nature-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Beranda Sistem</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Dashboard pusat informasi lingkungan, status warga, cuaca, dan pintasan cepat menu aplikasi.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Peta Lokasi</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Pemetaan spasial sebaran bank sampah, titik hijau, dan laporan wilayah secara real-time.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-600/20 text-sky-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-magnifying-glass-location"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Cari Warga</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Fitur direktori untuk menemukan rekan sesama pegiat lingkungan dan relawan di sekitar daerahmu.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Peringkat Lifetime</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Leaderboard kontributor daur ulang sampah dan pelestari lingkungan teraktif sepanjang masa.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-yellow-600/20 text-yellow-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Notifikasi</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Pemberitahuan instan mengenai jadwal setor sampah, pesan warga, dan peringatan lingkungan.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Analisis Data</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Grafik statistik volume sampah terkelola dan tingkat keasrian wilayah secara komprehensif.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-600/20 text-teal-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Obrolan Warga</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Ruang diskusi komunitas untuk bertukar ide pelestarian alam dan laporan kebersihan lingkungan.</p>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-3xl border border-dark-700 hover:border-nature-500/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-600/20 text-rose-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Status 24 Jam</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Bagikan momen aksi hijau harian dan postingan reels kegiatan bank sampah yang aktif dalam 24 jam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Sampah -->
+    <section id="kalkulator" class="py-20 bg-dark-800 border-y border-dark-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-nature-400 font-bold text-xs uppercase tracking-widest bg-dark-700 px-3.5 py-1.5 rounded-full border border-dark-600">Simulasi Daur Ulang</span>
+                <h2 class="text-3xl font-extrabold text-white">Kalkulator Potensi Sampah</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Hitung estimasi tabungan bank sampah dan pengurangan emisi karbon bulanan Anda.</p>
+            </div>
+
+            <div class="bg-dark-900 p-6 sm:p-10 rounded-3xl shadow-xl border border-dark-700 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Jenis Sampah</label>
+                        <select id="jenis-sampah" class="w-full bg-dark-800 border border-dark-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nature-500">
+                            <option value="plastik">Plastik (Botol / Gelas)</option>
+                            <option value="kertas">Kertas / Kardus</option>
+                            <option value="logam">Logam / Kaleng</option>
+                            <option value="organik">Organik (Kompos)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Berat (Kilogram per Minggu)</label>
+                        <input type="number" id="berat-sampah" min="1" value="5" class="w-full bg-dark-800 border border-dark-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-nature-500">
+                    </div>
+                </div>
+
+                <button onclick="hitungSampah()" class="w-full bg-nature-500 hover:bg-nature-400 text-slate-950 font-bold py-3.5 rounded-xl shadow-lg transition">
+                    Hitung Estimasi Nilai & Dampak
+                </button>
+
+                <div id="hasil-kalkulator" class="hidden bg-dark-800 border border-dark-700 rounded-2xl p-6 mt-6 space-y-3">
+                    <h4 class="font-bold text-white text-base border-b border-dark-700 pb-2">Hasil Simulasi Bulanan:</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-2">
+                        <div class="bg-dark-900 p-4 rounded-xl border border-dark-700">
+                            <span class="text-slate-400 block text-xs">Estimasi Nilai Ekonomi:</span>
+                            <span id="nilai-uang" class="text-lg font-extrabold text-nature-400">Rp 0</span>
+                        </div>
+                        <div class="bg-dark-900 p-4 rounded-xl border border-dark-700">
+                            <span class="text-slate-400 block text-xs">Pengurangan Karbon (CO₂):</span>
+                            <span id="nilai-karbon" class="text-lg font-extrabold text-emerald-400">0 kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laman Kontak Developer -->
+    <section id="kontak-developer" class="py-20 bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="text-nature-400 font-bold text-xs uppercase tracking-widest bg-dark-800 px-4 py-1.5 rounded-full border border-dark-700">Pusat Bantuan & Pengembang</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Kontak Developer & Admin</h2>
+                <p class="text-slate-400 text-sm">Hubungi tim pengelola atau pengembang sistem GeoCare untuk informasi dan dukungan lebih lanjut.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card Admin -->
+                <div class="bg-dark-800 border border-dark-700 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-nature-500/40 transition-all shadow-lg">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-nature-600/20 text-nature-400 flex items-center justify-center text-xl font-bold border border-nature-600/30">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Admin GeoCare</h3>
+                            <p class="text-slate-400 text-xs mt-1">Pengelola sistem operasional dan program pengabdian.</p>
+                        </div>
+                        <div class="bg-dark-900 p-3.5 rounded-2xl border border-dark-700 flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-nature-400"></i>
+                            <span class="text-xs text-slate-200 font-mono break-all">admingeomengabdi@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-dark-700">
+                        <a href="mailto:admingeomengabdi@gmail.com" class="w-full block text-center bg-dark-700 hover:bg-nature-500 hover:text-slate-950 text-slate-200 text-xs font-bold py-2.5 rounded-xl transition-all">
+                            Kirim Email ke Admin
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Developer dengan Foto Asli format PNG -->
+                <div class="bg-dark-800 border border-dark-700 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-nature-500/40 transition-all shadow-lg">
+                    <div class="space-y-4">
+                        <!-- Menampilkan Foto Asli PNG Anda -->
+                        <div class="w-16 h-16 rounded-2xl overflow-hidden border border-emerald-600/30 shadow-md bg-dark-900">
+                            <img src="developer-foto.png" alt="Ringga Dharma" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Dharma Dloper</h3>
+                            <p class="text-slate-400 text-xs mt-1">Lead Developer & Technical Support Sistem.</p>
+                        </div>
+                        <div class="bg-dark-900 p-3.5 rounded-2xl border border-dark-700 flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-emerald-400"></i>
+                            <span class="text-xs text-slate-200 font-mono break-all">ringgadharma16@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-dark-700">
+                        <a href="mailto:ringgadharma16@gmail.com" class="w-full block text-center bg-dark-700 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 text-xs font-bold py-2.5 rounded-xl transition-all">
+                            Kirim Email ke Developer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 bg-dark-800 border-t border-dark-700 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-nature-600 to-nature-400 flex items-center justify-center text-slate-950 text-2xl mx-auto shadow-xl shadow-nature-500/20 font-bold">
+                <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Unduh Aplikasi GeoCare</h2>
+            <p class="text-slate-400 max-w-xl mx-auto text-sm">Mari berkontribusi nyata dalam pelestarian lingkungan bersama Tim Pengabdian Geografi Mengabdi Unmul 2026.</p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <button onclick="triggerDownload()" class="w-full sm:w-auto flex items-center justify-center gap-4 bg-gradient-to-r from-nature-600 to-nature-500 hover:from-nature-500 hover:to-nature-400 text-slate-950 px-8 py-4 rounded-2xl shadow-xl shadow-nature-600/30 font-bold text-base transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-cloud-arrow-down text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-[10px] font-semibold text-slate-900 uppercase">Download APK</div>
+                        <div class="text-sm -mt-0.5">GeoCare-app</div>
+                    </div>
+                </button>
+            </div>
+
+            <div id="download-status" class="hidden text-xs text-nature-400 font-medium bg-dark-900 border border-dark-700 max-w-md mx-auto py-3 px-4 rounded-xl">
+                <i class="fa-solid fa-spinner fa-spin mr-2"></i> Memulai pengunduhan GeoCare APK...
+            </div>
+
+            <div class="text-xs text-slate-500 pt-2 flex items-center justify-center gap-6">
+                <span><i class="fa-solid fa-shield text-nature-400 mr-1"></i> Aman & Terverifikasi</span>
+                <span><i class="fa-solid fa-file-arrow-down mr-1"></i> Ukuran: ~6.6 MB</span>
+                <span><i class="fa-solid fa-android mr-1"></i> Android 7.0+</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 text-slate-500 py-10 border-t border-dark-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 rounded-md bg-nature-500 flex items-center justify-center text-slate-950 font-bold text-xs">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <span class="font-bold text-slate-300">GeoCare Unmul 2026</span>
+            </div>
+            <p class="text-center md:text-left">
+                &copy; 2026 Tim Pengabdian Geografi Mengabdi | Universitas Mulawarman.
+            </p>
+            <div class="flex space-x-4 text-base text-slate-400">
+                <a href="#" class="hover:text-nature-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-nature-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-nature-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function hitungSampah() {
+            const jenis = document.getElementById('jenis-sampah').value;
+            const beratPerMinggu = parseFloat(document.getElementById('berat-sampah').value) || 0;
+            const beratBulanan = beratPerMinggu * 4;
+
+            let hargaPerKg = 0;
+            let karbonPerKg = 1.5;
+
+            if (jenis === 'plastik') {
+                hargaPerKg = 3500;
+                karbonPerKg = 2.5;
+            } else if (jenis === 'kertas') {
+                hargaPerKg = 2000;
+                karbonPerKg = 1.2;
+            } else if (jenis === 'logam') {
+                hargaPerKg = 7500;
+                karbonPerKg = 4.0;
+            } else if (jenis === 'organik') {
+                hargaPerKg = 1000;
+                karbonPerKg = 0.8;
+            }
+
+            const totalUang = beratBulanan * hargaPerKg;
+            const totalKarbon = (beratBulanan * karbonPerKg).toFixed(1);
+
+            document.getElementById('nilai-uang').innerText = 'Rp ' + totalUang.toLocaleString('id-ID');
+            document.getElementById('nilai-karbon').innerText = totalKarbon + ' kg CO₂ dicegah';
+            document.getElementById('hasil-kalkulator').classList.remove('hidden');
+        }
+
+        function triggerDownload() {
+            const statusBox = document.getElementById('download-status');
+            statusBox.classList.remove('hidden');
+            statusBox.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> Menyiapkan file APK GeoCare...`;
+
+            setTimeout(() => {
+                statusBox.innerHTML = `<i class="fa-solid fa-circle-check text-nature-400 mr-2"></i> Pengunduhan dimulai! Silakan periksa folder perangkat Anda.`;
+                
+                const fileUrl = 'GeoCare-app'; 
+                
+                const a = document.createElement('a');
+                a.href = fileUrl;
+                a.download = 'GeoCare-app.apk'; 
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
